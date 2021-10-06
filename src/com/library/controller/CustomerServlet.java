@@ -17,7 +17,7 @@ import com.library.dao.CustomerDao;
  * Servlet implementation class CustomerServlet
  */
 //@WebServlet("/CustomerServlet")
-@WebServlet("/register")
+@WebServlet("/register-customer")
 public class CustomerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
