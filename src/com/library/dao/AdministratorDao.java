@@ -1,13 +1,11 @@
 package com.library.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.library.bean.Administrator;
 import com.library.utils.JDBCUtils;
-
 
 public class AdministratorDao {
 
@@ -19,14 +17,14 @@ public class AdministratorDao {
 
 		Class.forName("com.mysql.cj.jdbc.Driver");
 
+		Connection connection = null;
 		try {
 
 			// Step 1: Create a connection
 //			Connection connection = DriverManager.getConnection(
 //					"jdbc:mysql://localhost:3306/library-application?allowPublicKeyRetrieval=true&useSSL=false", "root", "root");
 
-			Connection connection = JDBCUtils.getConnection();
-			
+			connection = JDBCUtils.getConnection();
 
 			// Step 2:Create a statement using connection object
 			PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
@@ -38,8 +36,9 @@ public class AdministratorDao {
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
 			result = preparedStatement.executeUpdate();
-
+			JDBCUtils.closeConnection(connection);
 		} catch (SQLException e) {
+			JDBCUtils.closeConnection(connection);
 			// process sql exception
 			e.printStackTrace();
 			// printSQLException(e);

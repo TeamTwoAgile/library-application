@@ -30,7 +30,7 @@ public class JDBCUtils {
 		closeStatement(st);
 		closeConnection(conn);
 	}
-	
+
 	public static void colseConnection(Connection conn) {
 		closeConnection(conn);
 	}
