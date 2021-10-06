@@ -1,11 +1,8 @@
 package com.library.bean;
 
-public class Administrator {
+public class Administrator{
 	private int id;
-	private String userName;
-	private String password;
-	private String name;
-	private String email;
+	private String userName, password, name, email;
 
 	public int getId() {
 		return id;
@@ -46,5 +43,4 @@ public class Administrator {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 }
