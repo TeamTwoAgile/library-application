@@ -21,5 +21,5 @@ public class AdminLogin{
 		this.adminPass = adminPass;
 	}
 	
-	
+	// "SELECT * FROM administrator WHERE user_name = adminUser"
 }
