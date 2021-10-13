@@ -2,24 +2,24 @@ package com.library.bean;
 
 public class AdminLogin{
 	public String adminUser = "", adminPass = "";
-	
-	public AdminLogin(){
-		
-	}
-	
+
+	public AdminLogin(){}
+
 	public String getUser(){
 		return adminUser;
 	}
-	
-	public void setUser(String adminUser) {
+
+	public void setUser(String adminUser){
 		this.adminUser = adminUser;
 	}
-	
-	public String getPass() {
+
+	public String getPass(){
 		return adminPass;
 	}
-	
-	public void setPass(String adminPass) {
+
+	public void setPass(String adminPass){
 		this.adminPass = adminPass;
 	}
+	
+	
 }
