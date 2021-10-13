@@ -1,9 +1,14 @@
 package com.library.bean;
 
-public class AdminLogin{
-	public String adminUser = "", adminPass = "";
+import com.library.utils.Connector;
 
-	public AdminLogin(){}
+public class AdminLogin{
+	public AdminLogin(String adminUser, String adminPass) {
+		this.adminPass = adminPass;
+		this.adminUser = adminUser;
+	}
+	
+	public String adminUser = "", adminPass = "";
 
 	public String getUser(){
 		return adminUser;
@@ -21,5 +26,7 @@ public class AdminLogin{
 		this.adminPass = adminPass;
 	}
 	
-	// "SELECT * FROM administrator WHERE user_name = adminUser"
+	public void adminLogin(){
+		Connector.verifyAdmin(getUser(), getPass());
+	}
 }
