@@ -9,7 +9,7 @@
 <body>
 <div align="center">
   <h1>Customer Register Form</h1>
-  <form action="<%= request.getContextPath() %>/register" method="post">
+  <form action="<%= request.getContextPath() %>/register-customer" method="post">
    <table style="with: 80%">
    <tr>
      <td>Title</td>
