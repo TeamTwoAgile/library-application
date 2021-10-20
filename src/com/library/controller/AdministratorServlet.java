@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.library.bean.Administrator;
 import com.library.dao.AdministratorDao;
+import com.library.exception.BaseException;
 
 
 /**
@@ -68,7 +69,12 @@ public class AdministratorServlet extends HttpServlet {
         administrator.setEmail(email);
         try {
         	// EmployeeDao employeeDao = new EmployeeDao();
-        	administratorDao.registerAdministrator(administrator);
+        	try {
+				administratorDao.registerAdministrator(administrator);
+			} catch (BaseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
