@@ -6,6 +6,7 @@ public class Administrator {
 	private String password;
 	private String name;
 	private String email;
+	private String userType;
 
 	public int getId() {
 		return id;
@@ -45,6 +46,14 @@ public class Administrator {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 
 }

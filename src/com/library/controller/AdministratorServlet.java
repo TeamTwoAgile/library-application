@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.library.bean.Administrator;
 import com.library.dao.AdministratorDao;
+import com.library.exception.BaseException;
 
 
 /**
@@ -60,15 +61,22 @@ public class AdministratorServlet extends HttpServlet {
         String password = request.getParameter("password");
         String name = request.getParameter("name");
         String email = request.getParameter("email");
+        String userType=request.getParameter("userType");
 
         Administrator administrator = new Administrator();
         administrator.setUserName(username);
         administrator.setPassword(password);
-        administrator.setName(name);
+//        administrator.setName(name);
         administrator.setEmail(email);
+        administrator.setUserType(userType);
         try {
         	// EmployeeDao employeeDao = new EmployeeDao();
-        	administratorDao.registerAdministrator(administrator);
+        	try {
+				administratorDao.registerAdministrator(administrator);
+			} catch (BaseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
