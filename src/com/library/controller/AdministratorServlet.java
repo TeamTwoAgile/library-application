@@ -54,16 +54,9 @@ public class AdministratorServlet extends HttpServlet {
 				e.printStackTrace();
 			}
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-
-        
-        try {
-        	administratorDao.registerAdministrator(administrator);
-        }
-        catch (ClassNotFoundException e){
-
             e.printStackTrace();
         }
+       
         RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/administratordetails.jsp");
 		dispatcher.forward(request,  response);
 	}
