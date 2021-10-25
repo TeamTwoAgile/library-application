@@ -10,8 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.library.bean.Customer;
 import com.library.dao.CustomerDao;
 
-@WebServlet("/register")
-public class CustomerServlet extends HttpServlet{
+/**
+ * Servlet implementation class CustomerServlet
+ */
+//@WebServlet("/CustomerServlet")
+@WebServlet("/register-customer")
+public class CustomerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CustomerDao customerDao = new CustomerDao();
 
