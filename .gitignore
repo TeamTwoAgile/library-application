@@ -1,5 +1,11 @@
 /build/
-.classpath
 .DS_Store
 WebContent/WEB-INF/.DS_Store
 src/com/library/.DS_Store
+.idea/
+library-application.iml
+web/
+.settings/*
+classes/*
+/.classpath
+/*.project
