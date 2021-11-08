@@ -9,4 +9,3 @@ Steps to import the project in eclipse:
 6) On the next screen hit Next
 7) Select Import as general project option. Hit next
 8) Click on Finish
-
