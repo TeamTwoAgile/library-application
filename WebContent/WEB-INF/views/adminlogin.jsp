@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Administrator Login:</h1>
+			<h1>Administrator Login</h1>
 			<div class="card">
 				<div class="card-body">
 					<form action="<%=request.getContextPath()%>/register" method="post">
@@ -26,13 +26,6 @@
 						<label for="password" class="col-sm-2 col-form-label">password</label>
 						<div class="col-sm-7">
 							<input type="text" class="form-control" name="password" placeholder="Enter password">
-						</div>
-					</div>
-
-					<div class=" form-group row">
-						<label for="email" class="col-sm-2 col-form-label">email</label>
-						<div class="col-sm-7">
-							<input type="text" class="form-control" name="email" placeholder="Enter email">
 						</div>
 					</div>
 					<input type="hidden" name=userType value="admin">
