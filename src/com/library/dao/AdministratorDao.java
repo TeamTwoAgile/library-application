@@ -55,6 +55,8 @@ public class AdministratorDao {
 			// process sql exception
 			e.printStackTrace();
 			// printSQLException(e);
+			
+			throw new BaseException(e.getMessage());
 		}
 		return result;
 

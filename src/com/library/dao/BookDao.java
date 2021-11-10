@@ -8,7 +8,7 @@ import com.library.bean.Book;
 import com.library.utils.JDBCUtils;
 
 public class BookDao {
-	public int addBook(Book book) throws ClassNotFoundException {
+	public int addBook(Book book) throws Exception {
 
 		String INSERT_USERS_SQL = "INSERT INTO `library-application`.`book`(`name`,`author`,`type`)  VALUES "
 				+ " (?, ?, ?);";
@@ -40,6 +40,7 @@ public class BookDao {
 			// process sql exception
 			e.printStackTrace();
 			// printSQLException(e);
+			 throw new Exception(e.getMessage());
 		}
 		return result;
 
