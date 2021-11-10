@@ -7,7 +7,7 @@ import com.library.exception.BaseException;
 public class AdministratorService {
 	private AdministratorDao administratorDao = new AdministratorDao();
 
-	public int registerAdministrator(Administrator administrator) throws ClassNotFoundException, BaseException {
+	public int registerAdministrator(Administrator administrator) throws ClassNotFoundException, BaseException,Exception{
 		int registerAdministrator = administratorDao.registerAdministrator(administrator);
 		return registerAdministrator;
 	}

@@ -60,9 +60,13 @@ public class BookServlet extends HttpServlet {
 
 		try {
 			bookDao.addBook(book);
-		} catch (ClassNotFoundException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/book.jsp");
+			String message = e.getMessage();
+			request.setAttribute("msg", "Add book failed :  "+e.getMessage());
+			dispatcher.forward(request, response);
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/bookdetails.jsp");
 		dispatcher.forward(request, response);

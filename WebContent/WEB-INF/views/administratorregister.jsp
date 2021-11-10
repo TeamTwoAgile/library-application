@@ -73,6 +73,13 @@
 					</div>
 					
 					<input type="hidden" name=userType value="admin">
+					
+					<c:if test="${msg!=null}">
+						<div class=" form-group row">
+							<label for="type" class="col-sm-2 col-form-label"></label>
+							<div class="col-sm-7" style="color:blue">${msg}</div>
+						</div>
+					</c:if>
 
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>
