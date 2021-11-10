@@ -11,3 +11,10 @@ classes/*
 /*.project
 .classpath~f23d735dd5bf868491bed970ff27c482cbf0ff63
 /bin
+.classpath.orig
+.classpath~f23d735dd5bf868491bed970ff27c482cbf0ff63
+.idea/
+bin/
+classes/
+library-application.iml
+web/

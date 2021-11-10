@@ -75,23 +75,22 @@ public class AdministratorServlet extends HttpServlet {
 		administrator.setUserName(username);
 		administrator.setPassword(password);
 //        administrator.setName(name);
-		administrator.setEmail(email);
+        administrator.setEmail(email);
 
-		administrator.setUserType(userType);
-
-		try {
-			administratorDao.registerAdministrator(administrator);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/administratorregister.jsp");
-			request.setAttribute("msg", "register failed :  " + e.getMessage());
-			dispatcher.forward(request, response);
-			return;
-		}
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/administratordetails.jsp");
-		dispatcher.forward(request, response);
-
+        administrator.setUserType(userType);
+        try {
+        	// EmployeeDao employeeDao = new EmployeeDao();
+        	try {
+				administratorDao.registerAdministrator(administrator);
+			} catch (BaseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+       
+        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/administratordetails.jsp");
+		dispatcher.forward(request,  response);ß
 	}
 }
