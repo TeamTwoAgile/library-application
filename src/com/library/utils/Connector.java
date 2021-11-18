@@ -23,9 +23,9 @@ public class Connector{
 	public static void verifyAdmin(String user, String pass){
 		try{
 			Class.forName("org.mariadb.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/customer","root","D7i4FjL10!");
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project","root","D7i4FjL10!");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM administrator WHERE admin_user = '" + user + "'");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM admin_table WHERE username = '" + user + "'");
 
 			while(rs.next()){
 				if(pass.equals(rs.getString(3).toString())){
