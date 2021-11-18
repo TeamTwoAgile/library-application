@@ -14,7 +14,7 @@
 	src="${contextPath}/css/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
 </head>
 <body>
-	<div class="container" style="margin-top:200px">
+	<div class="container" style="margin-top: 200px">
 		<div class="row justify-content-center">
 			<h1>Add book:</h1>
 		</div>
@@ -40,13 +40,28 @@
 						</div>
 					</div>
 
-					<div class=" form-group row">
+					<!-- <div class=" form-group row">
 						<label for="type" class="col-sm-2 col-form-label">Type: </label>
 						<div class="col-sm-7">
 							<input type="text" class="form-control" name="type"
 								placeholder="Enter book type">
 						</div>
+					</div> -->
+
+					<div class="form-group row">
+						<label for="author" class="col-sm-2 col-form-label">
+						Book Type:
+						</label>
+						<div class="col-sm-7">
+							<select name="type" class="custom-select" id="inputGroupSelect01">
+							<option value="Agile">Agile methodology</option>
+							<option value="Two">Data Science</option>
+							<option value="Three">Software Design</option>
+							<option value="Three">Database</option>
+						</select>
+						</div>
 					</div>
+
 					<c:if test="${msg!=null}">
 						<div class=" form-group row">
 							<label for="type" class="col-sm-2 col-form-label"></label>
@@ -66,4 +81,15 @@
 		</div>
 	</div>
 </body>
+
+<style>
+.col-sm-7 {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 73%;
+	flex: 0 0 73%;
+	max-width: 73%;
+}
+</style>
+
+
 </html>
