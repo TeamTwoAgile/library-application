@@ -13,21 +13,19 @@ public class AdminLoginServlet extends HttpServlet{
 	public AdminLoginServlet(){
 		super();
 	}
-	
+
 	public void init(ServletConfig config) throws ServletException{}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/adminlogin.jsp");
 		dispatcher.forward(request,  response);
 	}
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String username = request.getParameter("username"), password = request.getParameter("password");
 		AdminLogin a = new AdminLogin(username, password);
 		boolean loggedIn = Connector.verifyAdmin(a.getUser(), a.getPass());
-		
+
 		if(loggedIn == true){
 			response.sendRedirect("WEB-INF/views/bookdetails.jsp");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/addBook");
