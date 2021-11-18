@@ -25,13 +25,14 @@ public class Connector{
 		
 		try{
 			Class.forName("org.mariadb.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project","root","D7i4FjL10!");
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project", "root", "D7i4FjL10!");
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM admin_table WHERE username = '" + user + "'");
 			
 			while(rs.next()){
-				if(pass.equals(rs.getString(3).toString())){
+				if(pass.equals(rs.getString(4).toString())){
 					System.out.println("Logged In Successfully");
+					System.out.println(rs.getNString(4));
 					loggedIn = true;
 				}
 				else{
@@ -44,7 +45,6 @@ public class Connector{
 		catch(Exception e){
 			System.out.println(e);
 		}
-		
-		return false;
+		return loggedIn;
 	}
 }
