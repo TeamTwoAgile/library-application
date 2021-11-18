@@ -1,12 +1,11 @@
 package com.library.controller;
+import com.library.bean.AdminLogin;
+import com.library.utils.Connector;
 
 import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-
-import com.library.bean.AdminLogin;
-import com.library.utils.Connector;
 
 @SuppressWarnings("serial")
 @WebServlet(name = "adminlogin", urlPatterns = {"/adminlogin"})
@@ -30,5 +29,8 @@ public class AdminLoginServlet extends HttpServlet{
 		
 		AdminLogin a = new AdminLogin(username, password);
 		Connector.verifyAdmin(a.getUser(), a.getPass());
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/book.jsp");
+		dispatcher.forward(request,  response);
 	}
 }

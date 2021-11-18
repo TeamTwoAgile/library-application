@@ -14,18 +14,18 @@
 			<h1>Administrator Login</h1>
 			<div class="card">
 				<div class="card-body">
-					<form action="<%=request.getContextPath()%>/register" method="post">
+					<form action="<%=request.getContextPath()%>/" method="post">
 					<div class="form-group row">
 						<label for="username" class="col-sm-2 col-form-label">User Name</label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" name="username" placeholder="Enter user name">
+							<input type="text" class="form-control" name="username" placeholder="User Name">
 						</div>
 					</div>
 
 					<div class="form-group row">
 						<label for="password" class="col-sm-2 col-form-label">password</label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" name="password" placeholder="Enter password">
+							<input type="text" class="form-control" name="password" placeholder="Password">
 						</div>
 					</div>
 					<input type="hidden" name=userType value="admin">
