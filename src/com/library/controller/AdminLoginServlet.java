@@ -10,7 +10,6 @@ import javax.servlet.http.*;
 @SuppressWarnings("serial")
 @WebServlet(name = "adminlogin", urlPatterns = {"/adminlogin"})
 public class AdminLoginServlet extends HttpServlet{
-	
 	public AdminLoginServlet(){
 		super();
 	}
@@ -26,12 +25,12 @@ public class AdminLoginServlet extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String username = request.getParameter("username"), password = request.getParameter("password");
-		
 		AdminLogin a = new AdminLogin(username, password);
 		boolean loggedIn = Connector.verifyAdmin(a.getUser(), a.getPass());
 		
 		if(loggedIn == true){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/bookdetails.jsp");
+			response.sendRedirect("WEB-INF/views/bookdetails.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/addBook");
 			dispatcher.forward(request,  response);
 		}
 		else{

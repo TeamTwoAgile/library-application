@@ -14,7 +14,7 @@
 			<h1>Administrator Login</h1>
 			<div class="card">
 				<div class="card-body">
-					<form action="<%=request.getContextPath()%>/" method="post">
+					<form action="<%=request.getContextPath()%>/addBook" method="post">
 					<div class="form-group row">
 						<label for="username" class="col-sm-2 col-form-label">User Name</label>
 						<div class="col-sm-7">
