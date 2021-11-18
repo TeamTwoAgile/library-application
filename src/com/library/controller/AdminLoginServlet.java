@@ -28,9 +28,15 @@ public class AdminLoginServlet extends HttpServlet{
 		String username = request.getParameter("username"), password = request.getParameter("password");
 		
 		AdminLogin a = new AdminLogin(username, password);
-		Connector.verifyAdmin(a.getUser(), a.getPass());
+		boolean loggedIn = Connector.verifyAdmin(a.getUser(), a.getPass());
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/book.jsp");
-		dispatcher.forward(request,  response);
+		if(loggedIn == true){
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/book.jsp");
+			dispatcher.forward(request,  response);
+		}
+		else{
+			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/adminlogin.jsp");
+			dispatcher.forward(request,  response);
+		}
 	}
 }
