@@ -14,15 +14,17 @@
 	src="${contextPath}/css/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
 </head>
 <body>
-	<div class="container">
-		<h1>Add book:</h1>
+	<div class="container" style="margin-top:200px">
+		<div class="row justify-content-center">
+			<h1>Add book:</h1>
+		</div>
 		<div class="card">
 			<div class="card-body">
 				<form action="<%=request.getContextPath()%>/addBook" method="post">
 
 					<div class="form-group row">
 						<label for="bookName" class="col-sm-2 col-form-label">Book
-							Name</label>
+							Name:</label>
 						<div class="col-sm-7">
 							<input type="text" class="form-control" name="name"
 								placeholder="Enter book name">
@@ -30,7 +32,7 @@
 					</div>
 
 					<div class="form-group row">
-						<label for="author" class="col-sm-2 col-form-label">Author
+						<label for="author" class="col-sm-2 col-form-label">Author:
 						</label>
 						<div class="col-sm-7">
 							<input type="text" class="form-control" name="author"
@@ -39,7 +41,7 @@
 					</div>
 
 					<div class=" form-group row">
-						<label for="type" class="col-sm-2 col-form-label">Type </label>
+						<label for="type" class="col-sm-2 col-form-label">Type: </label>
 						<div class="col-sm-7">
 							<input type="text" class="form-control" name="type"
 								placeholder="Enter book type">
@@ -48,11 +50,17 @@
 					<c:if test="${msg!=null}">
 						<div class=" form-group row">
 							<label for="type" class="col-sm-2 col-form-label"></label>
-							<div class="col-sm-7" style="color:blue">${msg}</div>
+							<div class="col-sm-7" style="color: blue">${msg}</div>
 						</div>
 					</c:if>
 
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<div class="container">
+						<div class="row">
+							<div class="col text-center">
+								<button class="btn btn-primary" type="submit">Submit</button>
+							</div>
+						</div>
+					</div>
 				</form>
 			</div>
 		</div>
