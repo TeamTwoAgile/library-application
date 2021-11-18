@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.library.bean.Administrator;
 import com.library.dao.AdministratorDao;
+import com.library.exception.BaseException;
 import com.mysql.cj.util.StringUtils;
 
 @WebServlet(name = "register", urlPatterns = { "/register" })
@@ -91,6 +92,6 @@ public class AdministratorServlet extends HttpServlet {
         }
        
         RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/administratordetails.jsp");
-		dispatcher.forward(request,  response);ß
+		dispatcher.forward(request,  response);
 	}
 }
