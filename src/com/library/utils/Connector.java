@@ -57,9 +57,7 @@ public class Connector{
 		return isAvailable;
 	}
 	
-	public static void bookCheckOut(){
-		boolean isAvailable = false;
-		
+	public static void bookCheckOut(int checkOutISBN){
 		try{
 			Class.forName("org.mariadb.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project", "root", "D7i4FjL10!");
@@ -69,6 +67,17 @@ public class Connector{
 			while(rs.next()){
 				System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3) + " " + rs.getString(4) + " " + rs.getString(5) + " " + rs.getInt(6) + " " + rs.getString(7) + " " + rs.getInt(8));
 				
+				if(rs.getInt(6) > 1){
+					stmt.executeLargeUpdate("UPDATE book_available SET num_copies = " + (rs.getInt(6) - 1) + ", num_checkedout = " + (rs.getInt(7) + 1) + " where isbn = " + checkOutISBN);
+					// update book_available set num_copies = 2, num_checkedout = 1 where isbn = 23456
+				}
+				if(rs.getInt(6) == 1){
+					stmt.executeLargeUpdate("UPDATE book_available SET num_copies = " + (rs.getInt(6) - 1) + ", num_checkedout = " + (rs.getInt(7) + 1) + ", is_available = " + 0 + " where isbn = " + checkOutISBN);
+					// update book_available set num_copies = 2, num_checkedout = 1 where isbn = 23456
+				}
+				if(rs.getInt(6) == 0){
+					// return error
+				}
 			}
 			con.close();
 		}
@@ -76,8 +85,6 @@ public class Connector{
 	}
 	
 	public static void bookReturn(){
-		boolean isAvailable = false;
-		
 		try{
 			Class.forName("org.mariadb.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project", "root", "D7i4FjL10!");
@@ -87,6 +94,7 @@ public class Connector{
 			while(rs.next()){
 				System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3) + " " + rs.getString(4) + " " + rs.getString(5) + " " + rs.getInt(6) + " " + rs.getString(7) + " " + rs.getInt(8));
 				
+				// update book_available set num_copies = 2, num_checkedout = 1 where isbn = 23456
 			}
 			con.close();
 		}
@@ -94,6 +102,8 @@ public class Connector{
 	}
 	
 	public static void main(String [] args){
+		Connector.bookAvailable();
+		Connector.bookCheckOut(23456);
 		Connector.bookAvailable();
 	}
 }
