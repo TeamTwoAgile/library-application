@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.library.bean.Book;
 import com.library.dao.BookDao;
-import com.mysql.cj.util.StringUtils;
 
 /**
  * Servlet implementation class BookServlet
