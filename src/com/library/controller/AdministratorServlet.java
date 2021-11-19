@@ -13,8 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.library.bean.Administrator;
 import com.library.dao.AdministratorDao;
 import com.library.exception.BaseException;
-//import com.mysql.cj.util.StringUtils;
-//import java.sql
 
 @WebServlet(name = "register", urlPatterns = { "/register" })
 public class AdministratorServlet extends HttpServlet {
