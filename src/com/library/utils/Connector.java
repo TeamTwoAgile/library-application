@@ -57,7 +57,9 @@ public class Connector{
 		return isAvailable;
 	}
 	
-	public static void bookCheckOut(int checkOutISBN){
+	public static boolean bookCheckOut(int checkOutISBN){
+		boolean checkedOut = false;
+		
 		try{
 			Class.forName("org.mariadb.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project", "root", "D7i4FjL10!");
@@ -69,20 +71,25 @@ public class Connector{
 				
 				if(rs.getInt(6) > 1){
 					stmt.executeLargeUpdate("UPDATE book_available SET num_copies = " + (rs.getInt(6) - 1) + ", num_checkedout = " + (rs.getInt(7) + 1) + " where isbn = " + checkOutISBN);
+					checkedOut = true;
 				}
 				if(rs.getInt(6) == 1){
 					stmt.executeLargeUpdate("UPDATE book_available SET num_copies = " + (rs.getInt(6) - 1) + ", num_checkedout = " + (rs.getInt(7) + 1) + ", is_available = " + 0 + " where isbn = " + checkOutISBN);
+					checkedOut = true;
 				}
 				if(rs.getInt(6) == 0){
-					// return error
+					checkedOut = false;
 				}
 			}
 			con.close();
 		}
 		catch(Exception e){}
+		return checkedOut;
 	}
 	
-	public static void bookReturn(int checkInISBN){
+	public static boolean bookReturn(int checkInISBN){
+		boolean checkIn = false;
+		
 		try{
 			Class.forName("org.mariadb.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project", "root", "D7i4FjL10!");
@@ -94,14 +101,20 @@ public class Connector{
 				
 				if(rs.getInt(8) == 0){
 					stmt.executeLargeUpdate("UPDATE book_available SET num_copies = " + (rs.getInt(6) + 1) + ", num_checkedout = " + (rs.getInt(7) - 1) + ", is_available = " + 1 + " where isbn = " + checkInISBN);
+					checkIn = true;
+				}
+				if(rs.getInt(8) == 1){
+					stmt.executeLargeUpdate("UPDATE book_available SET num_copies = " + (rs.getInt(6) + 1) + ", num_checkedout = " + (rs.getInt(7) - 1) + " where isbn = " + checkInISBN);
+					checkIn = true;
 				}
 				else{
-					stmt.executeLargeUpdate("UPDATE book_available SET num_copies = " + (rs.getInt(6) + 1) + ", num_checkedout = " + (rs.getInt(7) - 1) + " where isbn = " + checkInISBN);
+					checkIn = false;
 				}
 			}
 			con.close();
 		}
 		catch(Exception e){}
+		return checkIn;
 	}
 	
 	public static void main(String [] args){
