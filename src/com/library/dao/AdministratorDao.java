@@ -14,7 +14,7 @@ public class AdministratorDao {
 //		String INSERT_USERS_SQL = "INSERT INTO administrator" + "  (user_name,password,name,email) VALUES "
 //				+ " (?, ?, ?, ?);";
 		
-		String INSERT_USERS_SQL = "INSERT INTO user" + "  (username,password,email,user_type) VALUES(?,?,?,?)";
+		String INSERT_USERS_SQL = "INSERT INTO user" + "  (username,password,email,user_type,phone,address) VALUES(?,?,?,?,?,?)";
 
 		if (administrator == null) {
 			throw new BaseException("Administrator can not be null");
@@ -45,6 +45,8 @@ public class AdministratorDao {
 			preparedStatement.setString(2, administrator.getPassword());
 			preparedStatement.setString(3, administrator.getEmail());
 			preparedStatement.setString(4, administrator.getUserType());
+			preparedStatement.setString(5, administrator.getPhone());
+			preparedStatement.setString(6, administrator.getAddress());
 
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
