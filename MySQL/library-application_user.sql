@@ -19,7 +19,7 @@
 -- Table structure for table `user`
 --
 
--- DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
@@ -36,8 +36,9 @@ CREATE TABLE `user` (
   `email` varchar(50) DEFAULT NULL,
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(30) DEFAULT NULL,
+  `phone` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +47,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
--- INSERT INTO `user` VALUES (1,NULL,NULL,NULL,NULL,'admin',NULL,NULL,NULL,NULL,'lucy@gmail.com','Lucy','123'),(2,NULL,NULL,NULL,NULL,'admin',NULL,NULL,NULL,NULL,'lucy@gmail.com','Lucy','123');
+INSERT INTO `user` VALUES (15,NULL,NULL,NULL,NULL,'admin',NULL,NULL,NULL,NULL,'tom@gmail.com','Tom','1234',NULL),(16,NULL,NULL,NULL,NULL,'admin',NULL,NULL,NULL,NULL,'lucy@gmail.com','Lucy','1234',NULL),(17,NULL,NULL,NULL,NULL,'admin','Athlone',NULL,NULL,NULL,'harry@gmail.com','Harry Kol','123456','123456789');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-22 10:25:39
+-- Dump completed on 2021-11-18 17:28:27

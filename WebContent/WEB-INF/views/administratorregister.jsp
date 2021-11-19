@@ -38,54 +38,91 @@
 			<input type="submit" value="Submit" />
 		</form>
 	</div> --%>
-	
-	
-	<div class="container">
-		<h1>Register Administrator:</h1>
+
+
+	<div class="container" style="margin-top: 200px">
+		<div class="row justify-content-center">
+			<h1>Register Administrator:</h1>
+		</div>
 		<div class="card">
 			<div class="card-body">
 				<form action="<%=request.getContextPath()%>/register" method="post">
 
 					<div class="form-group row">
 						<label for="username" class="col-sm-2 col-form-label">User
-							Name</label>
+							Name:</label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" name="username"
+							<input type="text" class="form-control" name=username
 								placeholder="Enter user name">
 						</div>
 					</div>
 
 					<div class="form-group row">
-						<label for="password" class="col-sm-2 col-form-label">password
+						<label for="author" class="col-sm-2 col-form-label">Password:
 						</label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" name="password"
+							<input type="password" class="form-control" name="password"
 								placeholder="Enter password">
 						</div>
 					</div>
 
-					<div class=" form-group row">
-						<label for="email" class="col-sm-2 col-form-label">email</label>
+					<input type="hidden" name=userType value="admin">
+					
+					<div class="form-group row">
+						<label for="author" class="col-sm-2 col-form-label">Phone:
+						</label>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" name="phone"
+								placeholder="Enter Phone number">
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label for="author" class="col-sm-2 col-form-label">Address:
+						</label>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" name="address"
+								placeholder="Enter address">
+						</div>
+					</div>
+					
+
+
+					<div class="form-group row">
+						<label for="author" class="col-sm-2 col-form-label">Email:
+						</label>
 						<div class="col-sm-7">
 							<input type="text" class="form-control" name="email"
 								placeholder="Enter email">
 						</div>
 					</div>
 					
-					<input type="hidden" name=userType value="admin">
-					
+
 					<c:if test="${msg!=null}">
 						<div class=" form-group row">
 							<label for="type" class="col-sm-2 col-form-label"></label>
-							<div class="col-sm-7" style="color:blue">${msg}</div>
+							<div class="col-sm-7" style="color: blue">${msg}</div>
 						</div>
 					</c:if>
 
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<div class="container">
+						<div class="row">
+							<div class="col text-center">
+								<button class="btn btn-primary" type="submit">Submit</button>
+							</div>
+						</div>
+					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	
 </body>
+<style>
+.col-sm-7 {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 73%;
+	flex: 0 0 73%;
+	max-width: 73%;
+}
+</style>
 </html>

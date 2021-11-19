@@ -9,7 +9,7 @@
  table,th,td
  {
   background-color:lightblue;
-  border: 2px solid gray;
+  border: 3px solid gray;
  }
 </style>
 </head>
@@ -21,7 +21,7 @@
   align= "center">
   <h1>Customer Registration Form</h1>
   <form action="<%= request.getContextPath() %>/register-customer" method="post">
-   <table style="background-color:red;
+   <table style="background-color:lightyellow;
     width: 80%;
     border: 1px solid green;
     align= "center">
@@ -46,10 +46,10 @@
     </tr>
     <tr>
      <td>
-     <h2 style = "font-size:120%; color: green">
+     <h2 style = "font-size:150%; color: green">
      Sex
      </h2>
-      <select>
+      <select style = "font-size:150%">
       <option value = "male">Male</option>
       <option value = "female">Female</option>
       <option value = "ana">anonymous</option>
@@ -70,10 +70,10 @@
     </tr>
      <tr>
      <td>
-     <h2 style = "font-type: bold; font-size:150%; color: red">
+     <h2 style = "font-weight:bold; font-size:150%; color: red">
      Card Details
      </h2>
-      <h2 style = "font-type:italic; font-size:120%; color: orange">
+      <h2 style = "font-weight:bold; font-size:120%; color: blue">
      <form> 
      <table {border:3px solid #c00} style="with: 30%">
      <tr>
@@ -82,9 +82,9 @@
     </tr>
       <tr>   
      <td>
-     <h4 style = "font-type:italic; font-size:150%; color: blue">
+     <h4 style = "font-weight:bold; font-size:150%; color: blue">
      Card Type
-     <select>
+     <select  style = "font-size:120%">
      <option value = "visa">Visa</option>
      <option value = "master">Master</option>
        </select>
@@ -117,7 +117,9 @@
      <td><input type="password" name="password" /></td>
     </tr>
    </table>
-    <input type="submit" value="Submit" />
+    <input
+     style = "font-weight:bold; font-family:Tahoma; font-size:170%; color: red"
+     type="submit" value="Submit" />
   </form>
  </div>
 </body>
