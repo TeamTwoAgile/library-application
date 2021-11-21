@@ -3,3 +3,5 @@
 .DS_Store
 WebContent/WEB-INF/.DS_Store
 src/com/library/.DS_Store
+/target/
+/bin/
