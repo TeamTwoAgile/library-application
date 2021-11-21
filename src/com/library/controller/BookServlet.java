@@ -16,7 +16,7 @@ import com.library.dao.BookDao;
 /**
  * Servlet implementation class BookServlet
  */
-@WebServlet(name = "addBook", urlPatterns = { "/addBook" })
+@WebServlet(name = "addBook", urlPatterns = { "/addBook" }) 
 public class BookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
