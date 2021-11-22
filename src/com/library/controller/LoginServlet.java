@@ -2,7 +2,7 @@ package com.library.controller;
 
 import java.io.IOException;
 
-
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +23,15 @@ public class LoginServlet extends HttpServlet {
         userfetch = new UserFetch();
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    
+    @Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/login.jsp");
+		dispatcher.forward(request,  response);
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
 
         String username = request.getParameter("username");
@@ -37,12 +45,12 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("username",user.getUsername());
                  //request.getRequestDispatcher("/loginsuccess.jsp").forward(request, response);
-               response.sendRedirect("index.jsp");
+               response.sendRedirect("WEB-INF/views/index.jsp");
             } else {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", username);
             	request.setAttribute("errMessage", "Invalid Password");
-            	request.getRequestDispatcher("/login.jsp").forward(request, response);
+            	request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
                //response.sendRedirect("login.jsp");
             }
         } catch (ClassNotFoundException e) {
