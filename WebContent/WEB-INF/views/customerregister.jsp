@@ -20,6 +20,7 @@
   border: 4px solid gray;
   align= "center">
   <h1>Customer Registration Form</h1>
+  <a href = "<%=request.getContextPath() %>/login"><h2>(Already Have An Account?)</h2></a>
   <form action="<%= request.getContextPath() %>/register-customer" method="post">
    <table style="background-color:lightyellow;
     width: 80%;
