@@ -28,7 +28,7 @@ public class AdminLoginServlet extends HttpServlet{
 
 		if(loggedIn == true){
 			response.sendRedirect("WEB-INF/views/bookdetails.jsp");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/addBook");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminDashboardServlet");
 			dispatcher.forward(request,  response);
 		}
 		else{
