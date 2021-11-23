@@ -2,6 +2,7 @@
 .DS_Store
 WebContent/WEB-INF/.DS_Store
 src/com/library/.DS_Store
+<<<<<<< HEAD
 .idea/
 library-application.iml
 web/
@@ -18,3 +19,7 @@ bin/
 classes/
 library-application.iml
 web/
+=======
+/target/
+/bin/
+>>>>>>> 43240bcf9ed45fb1b6f884c34cba8195b6b4f8df
