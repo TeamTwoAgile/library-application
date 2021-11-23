@@ -14,12 +14,9 @@ public class Connector{
 
 			while(rs.next()){
 				if(pass.equals(rs.getString(4).toString())){
-					System.out.println("Logged In Successfully");
-					System.out.println(rs.getNString(4));
 					loggedIn = true;
 				}
 				else{
-					System.out.println("Bad Credentials");
 					loggedIn = false;
 				}
 			}
