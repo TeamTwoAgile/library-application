@@ -116,6 +116,7 @@
 			</div>
 		</div>
 	</div>
+	<a href = "<%=request.getContextPath() %>/adminlogin"><h2>(Already Have An Account?)</h2></a>
 </body>
 <style>
 .col-sm-7 {
