@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Check Out or Return</title>
 		<link href="${contextPath}/css/bootstrap-4.0.0-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="${contextPath}/css/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
 	</head>
