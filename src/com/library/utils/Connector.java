@@ -14,12 +14,9 @@ public class Connector{
 
 			while(rs.next()){
 				if(pass.equals(rs.getString(4).toString())){
-					System.out.println("Logged In Successfully");
-					System.out.println(rs.getNString(4));
 					loggedIn = true;
 				}
 				else{
-					System.out.println("Bad Credentials");
 					loggedIn = false;
 				}
 			}
@@ -41,8 +38,6 @@ public class Connector{
 			ResultSet rs = stmt.executeQuery("SELECT * FROM book_available");
 
 			while(rs.next()){
-				System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3) + " " + rs.getString(4) + " " + rs.getString(5) + " " + rs.getInt(6) + " " + rs.getString(7) + " " + rs.getInt(8));
-
 				if(rs.getInt(0) == 1){
 					isAvailable = true;
 				}

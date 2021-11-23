@@ -75,7 +75,7 @@ public class BookServlet extends HttpServlet {
 		
 		if (!StringUtils.isNullOrEmpty(msg)) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/book.jsp");
-			request.setAttribute("msg", "Register failed :<br>  " + msg);
+			request.setAttribute("msg", "Add book failed :<br>  " + msg);
 			dispatcher.forward(request, response);
 			return;
 		}
@@ -94,7 +94,12 @@ public class BookServlet extends HttpServlet {
 			request.setAttribute("msg", "Add book failed :  "+e.getMessage());
 			dispatcher.forward(request, response);
 		}
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/bookdetails.jsp");
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/bookdetails.jsp");
+//		dispatcher.forward(request, response);
+//		response.sendRedirect("http://localhost:8080/library-application/AdminDashboardServlet");
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/book.jsp");
+		request.setAttribute("msg", "Add Book Success!");
 		dispatcher.forward(request, response);
 	}
 

@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Check Out or Return</title>
 		<link href="${contextPath}/css/bootstrap-4.0.0-dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="${contextPath}/css/bootstrap-4.0.0-dist/js/bootstrap.js"></script>
 	</head>
@@ -19,21 +19,7 @@
 					<div class="form-group row">
 						<label for="bookName" class="col-sm-2 col-form-label">Book Name</label>
 						<div class="col-sm-7">
-							<input type="text" class="form-control" name="name" placeholder="Enter book name">
-						</div>
-					</div>
-
-					<div class="form-group row">
-						<label for="author" class="col-sm-2 col-form-label">Author</label>
-						<div class="col-sm-7">
-							<input type="text" class="form-control" name="author" placeholder="Enter author name">
-						</div>
-					</div>
-
-					<div class=" form-group row">
-						<label for="type" class="col-sm-2 col-form-label">Type</label>
-						<div class="col-sm-7">
-							<input type="text" class="form-control" name="type" placeholder="Enter book type">
+							<input type="text" class="form-control" name="name" placeholder="Search Book">
 						</div>
 					</div>
 
