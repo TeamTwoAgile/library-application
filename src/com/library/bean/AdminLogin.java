@@ -31,9 +31,8 @@ public class AdminLogin{
 	}
 
 	public static void main(String [] args){
+		// This is just a test for the Admin Login - connection to the DB.
 		AdminLogin a = new AdminLogin("damien", "password");
-		a.adminLogin();
-		Connector.databaseConnector();
-		Connector.verifyAdmin("damien", "password");
+		Connector.verifyAdmin(a.getUser(), a.getPass());
 	}
 }
