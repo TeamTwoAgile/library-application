@@ -94,8 +94,9 @@ public class BookServlet extends HttpServlet {
 			request.setAttribute("msg", "Add book failed :  "+e.getMessage());
 			dispatcher.forward(request, response);
 		}
-		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/bookdetails.jsp");
-		dispatcher.forward(request, response);
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/bookdetails.jsp");
+//		dispatcher.forward(request, response);
+		response.sendRedirect("http://localhost:8080/library-application/AdminDashboardServlet");
 	}
 
 }
