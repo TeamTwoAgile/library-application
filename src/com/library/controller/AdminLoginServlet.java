@@ -27,8 +27,8 @@ public class AdminLoginServlet extends HttpServlet{
 		boolean loggedIn = Connector.verifyAdmin(a.getUser(), a.getPass());
 
 		if(loggedIn == true){
-			response.sendRedirect("WEB-INF/views/bookdetails.jsp");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/addBook");
+			response.sendRedirect("WEB-INF/views/admin_homepage.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminDashboardServlet");
 			dispatcher.forward(request,  response);
 		}
 		else{
