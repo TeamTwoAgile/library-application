@@ -26,11 +26,8 @@ public class BookActions extends HttpServlet{
 		String name = request.getParameter("username");
 		String author = request.getParameter("author");
 		String[] selected = request.getParameterValues("scales");
+		String check = selected[0];
 		
-		for(String check : selected) {
-			System.out.println(check);
-		}
-		
-		Connector.findBook(name, author);
+		Connector.findBook(name, author, check);
 	}
 }
