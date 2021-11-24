@@ -51,6 +51,20 @@ public class Connector{
 
 		return isAvailable;
 	}
+	
+	public static void findBook(String name, String author){
+		try{
+			Class.forName("org.mariadb.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project", "root", "D7i4FjL10!");
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM book_available where author = '" + author + "'");
+			
+			while(rs.next()){
+				
+			}
+		}
+		catch(Exception e){}
+	}
 
 	public static boolean bookCheckOut(int checkOutISBN){
 		boolean checkedOut = false;

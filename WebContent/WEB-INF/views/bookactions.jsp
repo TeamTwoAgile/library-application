@@ -21,6 +21,14 @@
 						<div class="col-sm-7">
 							<input type="text" class="form-control" name="name" placeholder="Search Book">
 						</div>
+						<label for="authorName" class="col-sm-2 col-form-label">Author</label>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" name="author" placeholder="Search Book">
+						</div>
+						<div class="col-sm-7">
+							<input type="checkbox" id="scales" name="scales" checked>
+ 				 			<label for="scales">Check In/Out</label>
+ 				 		</div>
 					</div>
 
 					<button type="submit" class="btn btn-primary">Submit</button>
