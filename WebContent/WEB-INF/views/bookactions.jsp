@@ -15,7 +15,7 @@
 			<h1>Add book:</h1>
 			<div class="card">
 				<div class="card-body">
-				<form action="<%=request.getContextPath()%>/addBook" method="post">
+				<form action="<%=request.getContextPath()%>/bookactions" method="post">
 					<div class="form-group row">
 						<label for="bookName" class="col-sm-2 col-form-label">Book Name</label>
 						<div class="col-sm-7">
